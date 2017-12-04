@@ -1,0 +1,78 @@
+{
+  "keepers": [
+    {
+      "id": 0,
+      "firstName": "Edythe",
+      "lastName": "Bernhard",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/jjshaw14/128.jpg"
+    },
+    {
+      "id": 1,
+      "firstName": "Broderick",
+      "lastName": "Mills",
+      "image":
+        "https://s3.amazonaws.com/uifaces/faces/twitter/ryankirkman/128.jpg"
+    },
+    {
+      "id": 2,
+      "firstName": "Manuela",
+      "lastName": "Murphy",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/leeiio/128.jpg"
+    },
+    {
+      "id": 3,
+      "firstName": "Ada",
+      "lastName": "Mohr",
+      "image":
+        "https://s3.amazonaws.com/uifaces/faces/twitter/buzzusborne/128.jpg"
+    },
+    {
+      "id": 4,
+      "firstName": "Zachary",
+      "lastName": "Gulgowski",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/nerdgr8/128.jpg"
+    }
+  ],
+  "lighthouses": [
+    {
+      "id": 0,
+      "name": "Ailsa Craig Lighthouse",
+      "image":
+        "https://upload.wikimedia.org/wikipedia/commons/2/2d/Ailsa_Craig_Lighthouse_-_geograph.org.uk_-_1363818.jpg",
+      "map": "https://goo.gl/maps/nLonfAHReZm",
+      "year": "1886"
+    },
+    {
+      "id": 1,
+      "name": "Ardnamurchan Lighthouse",
+      "image":
+        "https://upload.wikimedia.org/wikipedia/commons/1/12/Ardnamurchan_Point_Lighthouse_%281%29.jpg",
+      "map": "https://goo.gl/maps/ReDULPLGhmH2",
+      "year": "1849"
+    },
+    {
+      "id": 2,
+      "name": "Barns Ness Lighthouse",
+      "image":
+        "https://upload.wikimedia.org/wikipedia/commons/6/6f/Barns_Ness_lighthouse_-_geograph.org.uk_-_1761800.jpg",
+      "map": "https://goo.gl/maps/cPi4A4zumzy",
+      "year": "1901"
+    },
+    {
+      "id": 3,
+      "name": "Buchan Ness Lighthouse",
+      "image":
+        "https://upload.wikimedia.org/wikipedia/commons/5/5d/Buchan_Ness_lighthouse_Boddam.jpg",
+      "map": "https://goo.gl/maps/85iGWEHzrAH2",
+      "year": "1827"
+    },
+    {
+      "id": 4,
+      "name": "Copinsay Lighthouse",
+      "image":
+        "https://upload.wikimedia.org/wikipedia/commons/b/bb/Copinsay_Lighthouse_-_geograph.org.uk_-_253323.jpg",
+      "map": "https://goo.gl/maps/zXSSJc5SCcB2",
+      "year": "1915"
+    }
+  ]
+}
