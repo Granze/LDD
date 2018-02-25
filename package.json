@@ -13,6 +13,8 @@
     "watch": "webpack-dev-server --open"
   },
   "dependencies": {
+    "@firebase/app": "^0.1.10",
+    "@firebase/messaging": "^0.2.1",
     "hyperhtml": "^2.1.3",
     "navigo": "^6.0.0"
   },

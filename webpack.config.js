@@ -32,6 +32,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
-    new CopyWebpackPlugin([{ from: 'src/img', to: 'img' }])
+    new CopyWebpackPlugin([
+      { from: 'src/img', to: 'img' },
+      { from: 'src/firebase-messaging-sw.js', to: ''}
+    ])
   ]
 };

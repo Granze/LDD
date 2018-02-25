@@ -2,6 +2,7 @@ import Navigo from 'navigo';
 import ListItem from './components/ListItem';
 import Detail from './components/Detail';
 import Form from './components/Form';
+import './notifications';
 import './main.css';
 
 const contentContainer = document.querySelector('#content-container');
