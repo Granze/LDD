@@ -1,13 +1,13 @@
 # LDD 
-> Lighthouse driven development
+> Lighthouse driven development (From SPA to PWA)
 
-## 1. What is Lighthouse
+## What is Lighthouse
 
 - Audits tab in Google Chrome
 - Chrome Extension
 - CLI
 
-## 2. What is a PWA
+## What is a PWA
 
 - Responsive
 - Connectivity-independent
@@ -19,15 +19,7 @@
 - Installable
 - Linkable
 
-### 2.1 JS basics
-- DOM manipulation
-- Array methods (map, filter, reduce)
-- Fetch
-- Promises
-
-## 2.2 Application Shell
-
-## 3. Service Worker
+## Service Workers
 
 - Runs in its own global script context
 - No DOM access
@@ -35,7 +27,7 @@
 - It's a separate file
 - It need to be registered
 
-### 3.1 Registration
+### Registration
  ```javascript
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js')
@@ -47,10 +39,23 @@ if ('serviceWorker' in navigator) {
     });
 }
  ```
+ 
+ ### Intercept requests
+ - The `fetch` event
+ 
+ ```javascript
+ self.addEventListener('fetch', e => {
+   e.respondWith(
+     caches.match(e.request).then(response => {
+       return response || fetch(e.request);
+     })
+   )
+ });
+ ```
 
-## 3.2 Lifecycle
+### Lifecycle
 
-## 4. Cache API
+## Cache API
 - differencies between Browser Cache
 
 ```javascript
@@ -67,14 +72,14 @@ self.addEventListener('install', function(e) {
 });
 ```
 
-### 4.1 Clean old caches
+### Clean old caches
 ```javascript
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys().then(keyList => 
       Promise.all(keyList.map(key => {
         if (key !== cacheName) {
-          console.log('[ServiceWorker] Removing old cache', key);
+          console.log('Removing cache:', key);
           return caches.delete(key);
         }
       }))
@@ -83,20 +88,16 @@ self.addEventListener('activate', e => {
 });
 ```
 
-## 5. Intercept requests
-- The `fetch` event
+## Application Shell
 
-```javascript
-self.addEventListener('fetch', e => {
-  e.respondWith(
-    caches.match(e.request).then(response => {
-      return response || fetch(e.request);
-    })
-  )
-});
-```
+## Add to home screen
+- You need a manifest.json file
+- Your manifest file needs a start URL
+- You need a 144 x 144 PNG icon
 
-## The web app manifest
+### The web app manifest
+
+[App manifest generator](https://app-manifest.firebaseapp.com/)
 
 ```json
 {
@@ -122,10 +123,13 @@ self.addEventListener('fetch', e => {
 <link rel="manifest" href="/manifest.json">
 ```
 
-### Add to home screen
-- You need a manifest.json file
-- Your manifest file needs a start URL
-- You need a 144 x 144 PNG icon
+## SPA
+
+### JS basics
+- DOM manipulation
+- Array methods (map, filter, reduce)
+- Fetch
+- Promises
 
 ---
 
@@ -152,7 +156,7 @@ self.addEventListener('fetch', e => {
 
 ### Feature detect
 ```javascript
-  if ('serviceWorker' in navigator && 'PushManager' in window) { ... }
+  if ('serviceWorker' in navigator && 'PushManager' in window) { }
 ```
 
 ### Notification opt-in
@@ -163,14 +167,13 @@ const subscribe = (reg) => {
 }
 ```
 
-## BackgroundSync
-
 ## Debugging Service Workers
-
 
 ## Tools
 - [Workbox](https://developers.google.com/web/tools/workbox/)
 - [Firebase](https://firebase.google.com/)
+
+## BackgroundSync
 
 ## Are PWA ready?
 
