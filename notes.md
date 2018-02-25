@@ -54,6 +54,7 @@ if ('serviceWorker' in navigator) {
  ```
 
 ### Lifecycle
+- see slides
 
 ## Cache API
 - differencies between Browser Cache
@@ -206,6 +207,28 @@ return messaging.getToken();
 ``` 
 
 - add `.then()` and console log the token
+
+- create `firebase-messaging-sw.js` and update webpack copy
+
+```javascript
+// firebase-messaging-sw.js
+
+importScripts('https://www.gstatic.com/firebasejs/4.1.3/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/4.1.3/firebase-messaging.js');
+
+firebase.initializeApp({
+  'messagingSenderId': SENDER_ID
+});
+
+const messaging = firebase.messaging();
+
+messaging.setBackgroundMessageHandler(payload => {
+  console.log('[firebase-messaging-sw.js] Received background message ', payload);
+  return self.registration.showNotification(notificationTitle,
+      notificationOptions);
+});
+
+```
 
 ```shell
 curl -X POST -H "Authorization: key=AAAAyNTjBhE:APA91bHTE7-AGbudM4Tqhx9XlHejUop-LOUfqF7B2XHHJFlTEvKMT6xbNP2d2v73CXgpTzref8cMD7fy606KA0JqaK6_aaGOM91hh0SrIE-RJ0Dx3uvgjBmH9TNhy_UZBR-G-4WHL5KK" -H "Content-Type: application/json" -d '{
