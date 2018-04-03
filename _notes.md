@@ -2,44 +2,7 @@
 
 > Lighthouse driven development (From SPA to PWA)
 
-## SPA
-
-### JS basics
-
-* DOM manipulation
-* Array methods (map, filter, reduce)
-* Fetch
-* Promises
-
----
-
-## What is Lighthouse
-
-* Audits tab in Google Chrome
-* Chrome Extension
-* CLI
-
-## What is a PWA
-
-* Responsive
-* Connectivity-independent
-* Interactive with a feel like a native app’s
-* Always up-to-date
-* Safe
-* Discoverable
-* Re-engageable
-* Installable
-* Linkable
-
-## Service Workers
-
-* Runs in its own global script context
-* No DOM access
-* HTTPS only
-* It's a separate file
-* It need to be registered
-
-### Registration
+### SW Registration
 
 ```javascript
 if ('serviceWorker' in navigator) {
@@ -54,6 +17,15 @@ if ('serviceWorker' in navigator) {
 }
 ```
 
+```javascript
+const cacheName = 'mycache-v1';
+const filesToCache = ['/', '/src/main.css', '/src/main.min.js'];
+
+self.addEventListener('install', e => {
+  e.waitUntil(caches.open(cacheName).then(cache => cache.addAll(filesToCache)));
+});
+```
+
 ### Intercept requests
 
 * The `fetch` event
@@ -63,24 +35,6 @@ self.addEventListener('fetch', e => {
   e.respondWith(
     caches.match(e.request).then(response => {
       return response || fetch(e.request);
-    })
-  );
-});
-```
-
-### Lifecycle
-
-* see slides
-
-## Cache API
-
-* differencies between Browser Cache
-
-```javascript
-self.addEventListener('install', function(e) {
-  e.waitUntil(
-    caches.open('mycache-v1').then(function(cache) {
-      return cache.addAll(['/', '/src/main.css', '/src/main.min.js']);
     })
   );
 });
@@ -104,6 +58,10 @@ self.addEventListener('activate', e => {
   );
 });
 ```
+
+### Lifecycle
+
+* see slides
 
 ## Application Shell
 
