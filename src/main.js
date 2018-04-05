@@ -7,6 +7,12 @@ import './main.css';
 const contentContainer = document.querySelector('#content-container');
 const router = new Navigo();
 
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js')
+    .then(() => console.log('it works'))
+    .catch(err => console.log('error:', err))
+}
+
 const renderComponent = (url, component) => {
   if (url) {
     fetch(url)
