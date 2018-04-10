@@ -236,7 +236,7 @@ curl -X POST -H "Authorization: key=AAAAyNTjBhE:APA91bHTE7-AGbudM4Tqhx9XlHejUop-
     "title": "Hello!",
     "body": "This is my first Message",
   },
-  "to": "eDusaLgjcg8:APA91bHOulqekmoZCBq0MU2wbZR5X9FVCGJrb_To2UyxbEHKzPYWSJOlumnsaZDj0rd4c6q5TCmSl2K7Zs4aYBEfL-2hpsISY7QmvfdERmUfsB1s50or94GHizhDlUhemR-wzXhpzIAd"
+  "to": "et-lHXNYV3A:APA91bEOFzPMDk1TPdpSYFHudVAsNG4yuzVo83ga8rqjRCdk-S1lrz6mBfh2au6YJQxRN9d96BdOyXMRASnwQMTPUpKnxl1x8m-GYMPBLs1lTJDim86L_fHgGLNrYPuqpHKhBOkQ98-f"
 }' "https://fcm.googleapis.com/fcm/send"
 ```
 
