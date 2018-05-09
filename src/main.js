@@ -4,6 +4,12 @@ import Detail from './components/Detail';
 import Form from './components/Form';
 import './main.css';
 
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js')
+    .then(register => console.log('service worker registered'))
+    .catch(err => console.log(err))
+}
+
 const contentContainer = document.querySelector('#content-container');
 const router = new Navigo();
 

@@ -32,6 +32,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
-    new CopyWebpackPlugin([{ from: 'src/img', to: 'img' }])
+    new CopyWebpackPlugin([
+      { from: 'src/img', to: 'img' },
+      { from: 'src/sw.js', to: '.'},
+      { from: 'src/manifest.json', to: '.'}
+      ])
   ]
 };
